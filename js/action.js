@@ -46,15 +46,15 @@ $(function() {
 
       var hostNb = hostCount(inMask);
 
-      var outIP = inIP.join(".") + "/" + cidr;
+      var outIP = inIP.join(".") + " / " + cidr;
       var outMask = cidr2octet(cidr).join(".");
-      console.log($.isArray(outMask));
+      //console.log("outMask: ", outMask);
  
       var outSubnetId = subnetId.join(".");
       var outWildcard = wildcard.join(".");
 
       $("#ip-addr").html(outIP);
-      $("#mask").html(outMask);
+      $("#mask-dis").html(outMask);
       $("#sub-id").html(outSubnetId);
       $("#broad-addr").html(broadcastAddr.join("."));
       $("#host-addr-from").html(startIP.join("."));

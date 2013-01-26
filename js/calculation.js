@@ -363,13 +363,13 @@ function checkEntries (ip, mask) {
     if(ip.indexOf("/") != -1) {
        mask = ip.split("/")[1];
        ip = ip.split("/")[0];
-       console.log("ip and mask : ", ip, mask);
+       // console.log("ip and mask : ", ip, mask);
        if (isNaN(mask) || mask === "" || mask === " ") {
             return "Il ne faut saisir que des chiffres.";
        } else if (mask < 0 || mask > 32) {
             return "La valeur du masque saisie dans l'adresse IP doit être comprise entre 0 et 32.";
        }
-       console.log("success mask : ", mask);
+       // console.log("success mask : ", mask);
     } else {
         var maskchk = check4digits(mask);
         if (maskchk !== true) {
@@ -388,10 +388,10 @@ function checkEntries (ip, mask) {
 function check4digits (digits) {
     console.log(digits);
     var dig = digits.split(".");
-    console.log("dig is : ", dig);
+    // console.log("dig is : ", dig);
     if (dig.length == 4) {
         for (i=0; i<4; i++) {
-            console.log("dig[i] is ", dig[i]);
+            // console.log("dig[i] is ", dig[i]);
             if (isNaN(dig[i])) {
                 return "Il ne faut saisir que des chiffres.";
             }

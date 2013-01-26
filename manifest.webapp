@@ -5,11 +5,10 @@
   "launch_path": "/index.html",
   "icons": {
     "16": "/img/icons/mortar-16.png",
-    "48": "/img/icons/mortar-48.png",
-    "128": "/img/icons/mortar-128.png"
+    "48": "/img/icons/mortar-48.png"
   },
   "developer": {
-    "name": "Your Name",
+    "name": "Nicolas Delebecque",
     "url": "https://github.com/nicodel/SommeNetTools"
   },
   "installs_allowed_from": ["*"],
