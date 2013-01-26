@@ -82,7 +82,7 @@ textarea {
   height: 4rem;
   resize: none;
   padding: 0 0.8rem;
-  font: 1.4rem/4rem "MozTT", Sans-serif;
+  font: 1rem/4rem "MozTT", Sans-serif;
   border: 0.1rem solid #ccc;
   border-radius: 0.3rem;
   box-shadow: none; /* override the box-shadow from the system (performance issue) */
@@ -106,4 +106,6 @@ textarea::-moz-placeholder {
   color: #666;
 }
 
-
+.infoTitle {
+  font-weight: bold;
+}
