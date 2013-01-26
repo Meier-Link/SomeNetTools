@@ -22,15 +22,20 @@
     minimum-scale: zoom mini
   -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  <link href="/css/app.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/calculation.js"></script>
+  <script type="text/javascript" src="js/action.js"></script>
+  <link href="css/app.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+    console.log("page loaded");
+  </script>
 </head>
 
 <body>
   <div id="top">
-    <div id="ip"><input type="text" /></div>
-    <div id="mask"><input type="text" /></div>
-    <div id="submit"><button id="submit">Calc</button></div>
+    <div><input type="text" value="" id="ip" /></div>
+    <div><input value="" type="text" id="mask" /></div>
+    <div><button id="submit" disabled>Calc</button></div>
   </div>
   <div id="slider"></div>
   <div id="result" style="display:none">
@@ -59,8 +64,8 @@
       <span id="wildcard-mask"></span>
     </div>
     <div class="info">
-      <span class="infoTitle">Wildcard Mask</span><br/>
-      <span id="wildcard-mask"></span>
+      <span class="infoTitle">Host Number</span><br/>
+      <span id="nb-hosts"></span>
     </div>
   </div>
 </body>
