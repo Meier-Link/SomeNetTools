@@ -7,6 +7,12 @@
 
 /* Your styles here */
 
+body {
+  padding: 10px;
+}
+
+button, 
+
 a[role="button"]::-moz-focus-inner,
 button::-moz-focus-inner {
   border: none;
@@ -57,18 +63,11 @@ a[role="button"][aria-disabled="true"].recommend {
   color: #bcbcbc;
   pointer-events: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+/*
+* Inputs
+*
+*/
+.info,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -106,3 +105,5 @@ input[type="url"]::-moz-placeholder,
 textarea::-moz-placeholder {
   color: #666;
 }
+
+

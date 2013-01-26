@@ -47,7 +47,15 @@ $(function() {
       var hostNb = hostCount(inMask);
 
       var outIP = inIP.join(".") + "/" + cidr;
-      var outMask = inMask.join(".");
+      var outMask = ""; 
+      if ($.isArray(inMask))
+      {
+        outMask = inMask.join(".");
+      }
+      else
+      {
+        outMask = cidr2octet(cidr);
+      }
       var outSubnetId = subnetId.join(".");
       var outWildcard = wildcardMask.join(".");
 
@@ -62,5 +70,7 @@ $(function() {
 
       $("#result").css("display", "block");
     }
+
+      $("#result").css("display", "block");
   });
 });

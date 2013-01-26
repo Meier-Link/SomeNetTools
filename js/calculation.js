@@ -362,25 +362,25 @@ function stackTrace( e ) {
 function checkEntries (ip, mask) {
     if(ip.indexOf("/") != -1) {
        mask = ip.split("/")[1];
-       //ip = ip.split("/")[0];
+       ip = ip.split("/")[0];
        console.log("ip and mask : ", ip, mask);
-       if (isNaN(mask)) {
+       if (isNaN(mask) || mask === "" || mask === " ") {
             return "Il ne faut saisir que des chiffres.";
        } else if (mask < 0 || mask > 32) {
             return "La valeur du masque saisie dans l'adresse IP doit être comprise entre 0 et 32.";
-       } else
-        {
-          return true;
+       }
+       console.log("success mask : ", mask);
+    } else {
+        var maskchk = check4digits(mask);
+        if (maskchk !== true) {
+            return maskchk;
         }
     }
     var ipchk = check4digits(ip);
     if (ipchk !== true) {
         return ipchk;
     }
-    var maskchk = check4digits(mask);
-    if (maskchk !== true) {
-        return maskchk;
-    }
+    
     
     return true;
 }
