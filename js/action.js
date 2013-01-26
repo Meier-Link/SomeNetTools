@@ -28,36 +28,30 @@ $(function() {
 
   $("#submit").click(function()
   {
-    var inIP = $("#ip").val().split(".");
-    var inMask = $("#mask").val().split(".");
-
-    if (checkEntries(inIP, inMask) == true)
+    if (checkEntries($("#ip").val(), $("#mask").val()) == true)
     {
+      var inIP = $("#ip").val().split(".");
+      var inMask = $("#mask").val().split(".");
+
       var cidr = octet2cidr(inMask);
 
       var subnetId = subnetID(inIP, inMask);
 
-      var wildcardMask = wildcardMask(inMask);
+      var wildcard = wildcardMask(inMask);
 
       var broadcastAddr = broadcast(inIP, wildcardMask);
 
       var startIP = startingIP(inIP, inMask);
-      var endIP = endingIP(inIP, wildcardMask);
+      var endIP = endingIP(inIP, wildcard);
 
       var hostNb = hostCount(inMask);
 
       var outIP = inIP.join(".") + "/" + cidr;
-      var outMask = ""; 
-      if ($.isArray(inMask))
-      {
-        outMask = inMask.join(".");
-      }
-      else
-      {
-        outMask = cidr2octet(cidr);
-      }
+      var outMask = cidr2octet(cidr).join(".");
+      console.log($.isArray(outMask));
+ 
       var outSubnetId = subnetId.join(".");
-      var outWildcard = wildcardMask.join(".");
+      var outWildcard = wildcard.join(".");
 
       $("#ip-addr").html(outIP);
       $("#mask").html(outMask);

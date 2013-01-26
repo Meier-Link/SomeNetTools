@@ -386,6 +386,7 @@ function checkEntries (ip, mask) {
 }
 
 function check4digits (digits) {
+    console.log(digits);
     var dig = digits.split(".");
     console.log("dig is : ", dig);
     if (dig.length == 4) {
